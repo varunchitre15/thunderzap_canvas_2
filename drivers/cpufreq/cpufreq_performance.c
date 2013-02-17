@@ -18,7 +18,7 @@
 #include <linux/cpu.h>
 #include <linux/cpumask.h>
 
-static void cpu_up_work()
+static void cpu_up_work(void)
 {
 	int cpu;
 	
@@ -29,7 +29,7 @@ static void cpu_up_work()
 	}
 }
 
-static void cpu_down_work()
+static void cpu_down_work(void)
 {
 	int cpu;
 	
