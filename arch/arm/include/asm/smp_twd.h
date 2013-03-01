@@ -25,6 +25,6 @@ extern void __iomem *twd_base;
 int twd_timer_ack(void);
 void twd_timer_setup(struct clock_event_device *);
 int localtimer_set_next_event(unsigned long evt);
-inline unsigned long localtimer_get_counter(void);
+unsigned long localtimer_get_counter(void);
 
 #endif

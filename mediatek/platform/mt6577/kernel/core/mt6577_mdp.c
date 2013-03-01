@@ -1061,7 +1061,7 @@ static /*__tcmfunc*/ int MdpIsr_ROT( unsigned long mdp_id )
           .............................................................................*/
 
         g_mdp_irq_tbl.fps_int_count[rot_index]++;
-        if( g_mdp_irq_tbl.fps_int_count[rot_index] == 30 /*FPS_CALC_PERIOD*/ )
+        if( g_mdp_irq_tbl.fps_int_count[rot_index] == 60 /*FPS_CALC_PERIOD*/ )
         {
             struct timeval  tv;
             unsigned long   elapse_time_in_ms;
