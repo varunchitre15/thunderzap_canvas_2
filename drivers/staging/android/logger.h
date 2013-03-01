@@ -42,15 +42,15 @@ struct logger_entry {
 #endif
 
 #ifndef __EVENTS_BUF_SIZE
-#define __EVENTS_BUF_SIZE 256*1024*2 
+#define __EVENTS_BUF_SIZE 32*1024 
 #endif
 
 #ifndef __RADIO_BUF_SIZE
-#define __RADIO_BUF_SIZE 64*1024*2
+#define __RADIO_BUF_SIZE 32*1024
 #endif
 
 #ifndef __SYSTEM_BUF_SIZE
-#define __SYSTEM_BUF_SIZE 64*1024*2
+#define __SYSTEM_BUF_SIZE 32*1024
 #endif
 #else
 /* mingjian, 20101208: define buffer size based on different products {*/
