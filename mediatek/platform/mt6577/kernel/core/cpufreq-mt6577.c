@@ -1079,9 +1079,9 @@ static int cpufreq_pdrv_probe(struct platform_device *pdev)
         }
         else
         {
-            g_cur_freq = DVFS_F3_MT6577_E1;
+            g_cur_freq = DVFS_F5_MT6577_E1;
             g_limited_freq = DVFS_F1_MT6577_E1;
-            g_limited_min_freq = DVFS_F6_MT6577_E1;
+            g_limited_min_freq = DVFS_F11_MT6577_E1;
         }
     }
     else if (get_chip_ver() >= CHIP_6575_E2)
