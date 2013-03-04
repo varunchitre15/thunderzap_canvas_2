@@ -2477,10 +2477,10 @@ static int pmic_thermal_throttling_enable = 0;
 static int pmic_tt_test_mode = 0;
 static int pmic_tt_test_mode_value = 0;
 
-#define DVFS_F1 (1001000)   // KHz
-#define DVFS_F2 ( 500500)   // KHz
-#define DVFS_F3 ( 250250)   // KHz
-#define DVFS_F4 ( 166833)   // KHz
+#define DVFS_F1		(1400000)
+#define DVFS_F2		(1300000)
+#define DVFS_F3     (1200000)
+#define DVFS_F4     (1100000)
 
 extern void cpufreq_thermal_protect(int limited_freq);
 //void cpufreq_thermal_protect(int limited_freq)
