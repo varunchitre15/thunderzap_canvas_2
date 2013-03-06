@@ -520,6 +520,12 @@ config APANIC
 	---help---
 	 Driver which handles kernel panics and attempts to write
 	 critical debugging data to flash.
+	 
+config FSYNC_CONTROL
+        bool "Support for FSync Control"
+        default y
+        help
+          Say Y here to enable FSync Control
 
 config APANIC_PLABEL
 	string "Android panic dump flash partition label"
