@@ -327,6 +327,9 @@ EXPORT_SYMBOL_GPL(rtc_read_alarm);
 
 static int __rtc_set_alarm(struct rtc_device *rtc, struct rtc_wkalrm *alarm)
 {
+	struct rtc_time tm;
+	long now, scheduled;
+	int err;
 #ifdef RTC_LEGACY_ALARM_IMPL
 	WARN(1, "__rtc_set_alarm() is not supported!!\n");
 	return -EPERM;
@@ -352,6 +355,16 @@ static int __rtc_set_alarm(struct rtc_device *rtc, struct rtc_wkalrm *alarm)
 	 * over right here, before we set the alarm.
 	 */
 #endif
+	err = rtc_valid_tm(&alarm->time);
+	if (err)
+		return err;
+	rtc_tm_to_time(&alarm->time, &scheduled);
+
+	/* Make sure we're not setting alarms in the past */
+	err = __rtc_read_time(rtc, &tm);
+	rtc_tm_to_time(&tm, &now);
+	if (scheduled <= now)
+		return -ETIME;
 	if (!rtc->ops)
 		err = -ENODEV;
 	else if (!rtc->ops->set_alarm)

@@ -1,6 +1,6 @@
 /*
  * Automatically generated C config: don't edit
- * Linux/arm 3.0.13 Kernel Configuration
+ * Linux/arm 3.0.20 Kernel Configuration
  */
 #define CONFIG_RING_BUFFER 1
 #define CONFIG_MTK_USB_GADGET 1
